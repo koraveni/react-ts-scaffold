@@ -215,7 +215,7 @@ fi
 # Add a command-line interface to invoke clean_self
 if [ "$1" == "clean-self" ]; then
   print_line
-  clean_workspace
+  clean_self
   print_line
   exit 0
 fi
