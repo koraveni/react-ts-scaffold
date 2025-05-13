@@ -124,11 +124,20 @@ function configure_project_files() {
 # Function to initialize Git repository
 function initialize_git() {
   echo "🔧 Initializing Git repository"
-  if [ ! -d .git ]; then
+  if [ -d .git ]; then
+    echo "⚠️ A .git directory already exists in this project."
+    read -p "Do you want to delete the existing .git directory and reinitialize Git? (y/n): " CONFIRMATION
+    if [[ "$CONFIRMATION" =~ ^[Yy]$ ]]; then
+      rm -rf .git || { echo "Failed to delete existing .git directory"; exit 1; }
+      echo "✅ Existing .git directory deleted."
+    else
+      echo "ℹ️ Skipping Git initialization."
+      return
+    fi
+  fi
     git init -b main || { echo "Failed to initialize Git repository with 'main' branch"; exit 1; }
     git add . || { echo "Failed to stage files"; exit 1; }
     echo "✅ Git repository initialized with 'main' branch as default."
-  fi
 }
 
 function configure_git_user() {
