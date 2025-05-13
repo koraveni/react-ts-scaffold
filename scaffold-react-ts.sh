@@ -197,7 +197,8 @@ function clean_self() {
   echo "⚠️ WARNING: This will delete files in scaffold-templates and scaffold-react-ts.sh."
   read -p "Are you sure you want to continue? (y/n): " CONFIRMATION
   if [[ "$CONFIRMATION" =~ ^[Yy]$ ]]; then
-    find . -mindepth 1 -maxdepth 1 -name 'scaffold-react-ts.sh' -name 'scaffold-templates' -exec rm -rf {} +
+    rm "$PWD/scaffold-react-ts.sh"
+    rm -rf "$PWD/scaffold-templates"
     echo ""
     echo "✅ Scaffold Setup cleaned."
   else
@@ -206,7 +207,6 @@ function clean_self() {
   fi
 }
 
-// function that will print a beautiful line on terminal
 function print_line() {
   LINE_LENGTH=60
   LINE_CHAR="*"
