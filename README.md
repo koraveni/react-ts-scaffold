@@ -26,9 +26,8 @@ Welcome to the **React TypeScript Project Scaffolding** script! This script is d
    Click on the green "Code" button at the top of this repository page and select "Download ZIP". Extract the downloaded ZIP file to your desired location.
 2. **Run the Script**:
    ```bash
-   ./scaffold-react-ts.sh <project-name>
+   bash scaffold-react-ts.sh
    ```
-   If `<project-name>` is not provided, the script will prompt you to enter one.
 3. **Follow the Prompts**: The script will guide you through the setup process, including Git configuration and workspace cleanup options.
 4. **Start Developing**: Once the script completes, your project is ready to go!
 
@@ -40,13 +39,13 @@ Welcome to the **React TypeScript Project Scaffolding** script! This script is d
   Removes all files except `scaffold-templates` and `scaffold-react-ts.sh`.
 
   ```bash
-  ./scaffold-react-ts.sh clean
+  bash scaffold-react-ts.sh clean
   ```
 
 - **Clean Scaffolding Setup**:
   Deletes `scaffold-templates` and `scaffold-react-ts.sh`.
   ```bash
-  ./scaffold-react-ts.sh clean-self
+  bash scaffold-react-ts.sh clean-self
   ```
 
 ---
